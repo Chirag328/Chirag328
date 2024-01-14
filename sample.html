@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Background Image</title>
+  <style>
+    body {
+      background-image:url(https://itrafoundation.org.in/wp-content/uploads/2023/01/620b6ebfa14de6001e914daa.jpg);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+    }
+
+    .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+  margin-bottom: 500px;
+}
+
+.column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+  .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row {margin: 0 -5px;}
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+  </style>
+</head>
+
+<body>
+
+	<h1 style="color: green; text-align: center;">
+		Welcome to GeeksforGeeks 
+	</h1>
+  <img align="right" src="https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/71xomefHdiL._AC_UF1000,1000_QL80_.jpg" usemap="#image-map" width="200">
+  <map name="image-map">
+
+  </map>
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="https://pbs.twimg.com/profile_images/956458175540076544/_fl_vAhA_400x400.jpg" width="300">Maharashtra</div>
+    </div>
+    <div class="column">
+      <div class="card">
+        <img src="https://pbs.twimg.com/media/FqdCDBGakAEWSnf.jpg" width="300" height="400">Gujrat</div>
+    </div>
+    <div class="column">
+      <div class="card">Rajasthan</div>
+    </div>
+    <div class="column">
+      <div class="card">Punjab</div>
+    </div>
+  </div>
+</body>
+
+</html>
