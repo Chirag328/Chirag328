@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta num_1="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+    background-color: rgb(14, 184, 218);
+    background: linear-gradient(to right, #16aaaa, #571d9f 100%);
+}
+.card {
+    box-shadow:  0 4px 8px 0 rgb(0, 0, 0); /* this adds the "card" effect */
+    padding: 32px;
+    background-size: cover;
+    margin-top: 80px;
+    box-sizing: content-box;
+    object-fit: contain;
+    height: auto;
+    width: 300px;
+    margin-left: 600px;
+    border-radius: 20px;
+    background-color:rgb(65, 149, 202);
+    transition:5s;
+    backdrop-filter: blur(14px);
+    overflow: hidden;
+    }
+.container{
+    display: flex;
+    flex-wrap: nowrap;
+   }
+.num1{
+    background-color: #206299;
+    height: 50px;
+    width: 100px;
+    margin: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 75px;
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: Sans-serif, Verdana;
+    font-size:xx-large;
+}
+#num2{
+    background-color: #f1f1f1;
+    box-shadow: 2px 4px 4px 2px  rgb(17, 73, 110);;
+    height: 70px;
+    width:280px;
+    margin: 10px;
+    text-align:end;
+    text-align:justify;
+    margin-top: 10px;
+    font-size: 30px;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    justify-content: end;
+    text-align-last: right;
+    text-justify: 20px;
+    font-family: Sans-serif, Verdana;
+    overflow: hidden;
+    font-size: xx-large;
+}
+h2{
+    text-align: center;
+    font-size: 30px;
+}
+output{
+    height: 50px;
+    width: 250px;
+}
+.num2{
+    height: 0px;
+    width:250px;
+}
+#num3{
+    background-color: #f1f1f1;
+    height: 50px;
+    width:200px;
+    margin: 10px;
+    text-align:center;
+    margin-top: 10px;
+    font-size: 30px;
+    border-radius: 20px;
+    position: relative;
+    align-items: end;
+}
+.con{
+    display: flex;
+}
+#num4{
+    background-color: #f1f1f1;
+    height: 50px;
+    width:200px;
+    margin: 10px;
+    text-align:center;
+    margin-top: 10px;
+    font-size: 30px;
+    border-radius: 20px;
+    position: relative;
+    align-items: end;
+}
+.num2{
+    background-color: rgb(143, 151, 225);
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+img.im1{
+   width: 40px;
+   margin-left: 3px;
+   margin-top: 1px;
+   margin-right: 2px;
+   
+}
+img.im2{
+    height:30px;
+    width: 30px;
+    margin-left: 3px;
+    margin-top: 2px;
+    
+ }
+.num1:hover {background-color: #5792ca}
+  
+.num1:active {
+    background-color: #5792ca;
+    box-shadow: 0 5px #6e5656;
+    transform: translateY(4px);
+  }
+ 
+    </style>
+</head>
+<body>
+  <div class="card">
+    <h2>CALCULATOR</h2>
+    <div class="con">
+      <div id="num2"></div>
+     </div>
+     <div class="container">
+      <div class="num1" id="1" onclick="reduce('AC')">AC</div>
+      <div class="num1" id="2" onclick="reduce('C')"><img src="C:\Users\shakshi anchan\Desktop\Chirag\Webweave\Calculator\delete.png" class="im1" alt=""></div>
+      <div class="num1" id="3" onclick="sign('%')">%</div>
+      <div class="num1" id="+" onclick="sign('/')">/</div>
+   </div>
+        <div class="container">
+        <div class="num1" id="1" onclick="num_1(7)">7</div>
+        <div class="num1" id="2" onclick="num_1(8)">8</div>
+        <div class="num1" id="3" onclick="num_1(9)">9</div>
+        <div class="num1" id="3" onclick="sign('x')"><img src="C:\Users\shakshi anchan\Desktop\Chirag\Webweave\Calculator\x.png" class="im2" alt=""></div>
+     </div>
+     <div class="container">
+         <div class="num1" id="4" onclick="num_1(4)">4</div>
+         <div class="num1" id="5" onclick="num_1(5)">5</div>
+         <div class="num1" id="6" onclick="num_1(6)">6</div>
+         <div class="num1" id="-" onclick="sign('-')">-</div>
+      </div>
+      <div class="container">
+         <div class="num1" id="1" onclick="num_1(1)">1</div>
+         <div class="num1" id="8" onclick='num_1(2)'>2</div>
+         <div class="num1" id="9" onclick="num_1(3)">3</div>
+         <div class="num1" id="+" onclick="sign('+')">+</div>
+      </div>
+      <div class="container">
+         <div class="num1" id="7" onclick=""></div>
+         <div class="num1" id="8" onclick="num_1(0)">0</div>
+         <div class="num1" id="=" onclick="num_1('.')">.</div>
+         <div class="num1" id="=" onclick="result('=')">=</div>
+      </div>
+ </div>
+    <script type="text/javascript">
+        var userEnteredNumber = [];
+var firstVariable;
+var firstStringLength;
+var firstString;
+var secondString;
+var secondVariable;
+var operator;
+
+function num_1(i) //Inserting first number function
+{
+  userEnteredNumber.push(i);
+  document.getElementById("num2").innerHTML = userEnteredNumber.join("");
+  firstVariable = parseFloat(userEnteredNumber.join("")); //1st variable
+  console.log(firstVariable);
+  firstString = firstVariable.toString(); // convert to string(1st variable)
+  firstStringLength = firstString.length; // finding length(1st variable)
+  console.log(firstStringLength); 
+
+}
+function reduce(a) //Clear and Allclear function
+{
+  b = 'AC';
+  c = 'C';
+  if(a == b)
+  {
+  while(userEnteredNumber.length = null)
+  { 
+    userEnteredNumber.pop();
+  }
+    document.getElementById("num2").innerHTML = userEnteredNumber.join("");
+
+  }
+  else if (a == c)
+ {
+    userEnteredNumber.pop();
+    document.getElementById("num2").innerHTML = userEnteredNumber.join("");
+ }
+}
+
+function sign(x) //operator function
+{
+  operator = x; // Store the operator
+  userEnteredNumber.push(x);
+  document.getElementById("num2").innerHTML = userEnteredNumber.join("");
+  if(x == '%'){
+    let output5 = firstVariable / 100;
+      document.getElementById("num2").innerHTML = output5;
+      console.log(output5); 
+  }
+}
+
+function result(y) //final output display function
+{
+
+  userEnteredNumber.push(y);
+  document.getElementById("num2").innerHTML = userEnteredNumber.join("");
+  secondString = userEnteredNumber.slice(firstStringLength + 1); //removing 1st variable from array
+  secondString.pop(y); //removing = sign
+  secondVariable = parseInt(secondString.join(""));
+ 
+  switch (operator) {
+    case 'x':
+      let output1 = firstVariable * secondVariable;
+      document.getElementById("num2").innerHTML = output1;
+      console.log(output1);
+      break;
+    case '/':
+      let output2 = firstVariable / secondVariable;
+      document.getElementById("num2").innerHTML = output2;
+      console.log(output2);
+      break;
+    case '+':
+      let output3 = firstVariable + secondVariable;
+      document.getElementById("num2").innerHTML = output3;
+      console.log(output3);
+      break;
+    case '-':
+      let output4 = firstVariable - secondVariable;
+      document.getElementById("num2").innerHTML = output4;
+      console.log(output4); 
+      break;
+  
+    default:
+      break;
+    }
+}
+    </script>
+</body>
+</html>
